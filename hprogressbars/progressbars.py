@@ -210,16 +210,16 @@ class ProgressBars:
     def reset_bar(self, index=0, max_progress=100, prefix='', formatting='', suffix='',
                   num_decimals=2, length=10, fill='█'):
         """
-
-        :param index:
-        :param max_progress:
-        :param prefix:
-        :param formatting:
-        :param suffix:
-        :param num_decimals:
-        :param length:
-        :param fill:
-        :return:
+        Resets a bar to its default values.
+        :param index: int representing the new index of the bar
+        :param max_progress: int representing the maximum possible value in progresss
+        :param prefix: String that defines the prefix of the bar
+        :param formatting: String. i.e ("bar: {0}".format(1))
+        :param suffix: String that defines the suffix of the bar
+        :param num_decimals: int representing the number of decimals that will be shown as progress
+        :param length: int representing the length of the bar in screen
+        :param fill: the string used to represent the progress of the bar
+        :return: VOID
         """
         bar = Bar(index, max_progress, prefix, formatting, suffix, num_decimals, length, fill)
         self._bars[index] = bar
@@ -271,7 +271,7 @@ class ProgressBars:
 
     def finish_work(self):
         """
-
+        Finish all the work done by all the bars and 
         :return:
         """
         percentages = self._get_percentages()
