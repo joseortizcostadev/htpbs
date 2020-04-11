@@ -63,6 +63,9 @@ import time # required for demostration purposes only
 progressbars = ProgressBars(num_bars=5)
 progressbars.set_last_bar_as_total_progress(prefix="Total Progress: ")
 
+# set total progress bar at any index 
+# progressbars.set_total_bar(index=3, prefix="total: ")
+
 # using the same thread 
 for i in range(101):
     time.sleep(0.1)
