@@ -18,8 +18,8 @@ The following are examples about how to use this library for threaded and non th
 ### Threaded horizontal bars
 
 ```python
-from htpbs import *
-import time # required for demostration purposes only
+from htpbs import ProgressBars, Work
+import time # required for demonstration purposes only
 
 
 # Note: users can create any configuration or function to be passed to the Work object below.
@@ -57,7 +57,7 @@ Work.start(work, (progressbars, 1, 0.01, "w2: "))
 ### Using the same thread
 
 ```python
-from htpbs import *
+from htpbs import ProgressBars
 import time # required for demostration purposes only
 
 progressbars = ProgressBars(num_bars=5)
@@ -76,7 +76,7 @@ progressbars.finish_all() # avoid memory leaks.
 ### Remove bars when job is done and init the next bar
 ```python
 # clearing and initializing new progress bars:
-from htpbs import *
+from htpbs import ProgressBars
 import time # required for demostration purposes only
 
 progressbars = ProgressBars(num_bars=3)
