@@ -1,5 +1,5 @@
-from progressbars import ProgressBars
-from progressbars import Work
+from .progressbars import ProgressBars
+from .progressbars import Work
 
 
 __all__ = [
