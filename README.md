@@ -67,6 +67,7 @@ import time # required for demostration purposes only
 
 progressbars = ProgressBars(num_bars=3)
 progressbars.set_last_bar_as_total_progress(prefix="Total Progress: ")
+
 # hide the bars that are not being used at the moment
 # multiple bars can be hidden at the same time
 progressbars.set_hidden_bars([1]) 
@@ -76,8 +77,11 @@ for i in range(101):
     time.sleep(0.1)
     progressbars.update(bar_index=0, value=i)
 progressbars.finish()
-progressbars.clear_bar(bar_index=0) # clears the bar that was completed from screen
-progressbars.reset_bar(index=1, prefix="new bar: ") # resets the new bar that will appear in screen 
+
+# clears the bar that was completed from screen
+progressbars.clear_bar(bar_index=0) 
+# resets the new bar that will appear in screen
+progressbars.reset_bar(index=1, prefix="new bar: ")   
 
 # non threaded work 2 starts
 for i in range(101):
