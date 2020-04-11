@@ -21,7 +21,7 @@ The following are examples about how to use this library for threaded and non th
 from hprogressbars import *
 import time # required for demostration purposes only
 
-# threaded bars using works. This functions represent works threaded
+# Function used as example to demostrate the functionality of hprogressbars library
 # Note: users can create any configuration or function to be passed to the Work object below.
 def work(progressbars, bar_index, work_value, work_name):
     """
@@ -43,14 +43,14 @@ def work(progressbars, bar_index, work_value, work_name):
 # start with 3 bars
 progressbars = ProgressBars(num_bars=3)
 # set bar #3 to be the total progress
-progressbars.set_last_bar_as_total_progress(prefix="Total Progress: ")
+progressbars.set_last_bar_as_total_progress(prefix="Total: ")
 
 # start all the threaded works
-Work.start(work, (progressbars, 0, 0.1, "work1: "))
-Work.start(work, (progressbars, 1, 0.01, "work2: "))
+Work.start(work, (progressbars, 0, 0.1, "w1: "))
+Work.start(work, (progressbars, 1, 0.01, "w2: "))
 
-# output after works finished 
-# work1:  |██████████| 100% completed    work2:  |██████████| 100% completed    Total Progress:  |██████████| 100% completed  
+# output after works finished
+# w1: |██████████| 100% completed   w2: |██████████| 100% completed    Total: |██████████| 100% completed
     
 ```
 
