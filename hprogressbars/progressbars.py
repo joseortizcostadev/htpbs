@@ -389,49 +389,6 @@ class Work:
             thread.join()
 
 
-"""
-import time
-
-
-def work1(mp, index):
-    for i in range(101):
-        time.sleep(0.01)
-        mp.update(index, i)
-    progressbars.clear_bar(index)
-    progressbars.reset_bar(index+1)
-    for i in range(101):
-        time.sleep(0.2)
-        mp.update(index+1, i)
-    mp.finish()
 
 
 
-def work2(mp, index):
-    for i in range(101):
-        time.sleep(0.1)
-        mp.update(index, i)
-    mp.finish()
-
-
-progressbars = ProgressBars(num_bars=4, max_progress=100)
-progressbars.set_last_bar_as_total_progress()
-progressbars.set_hidden_bars([1])
-
-
-#progressbars.set_hidden_bars([1])
-Work.start(work1, (progressbars, 0))
-Work.start(work2, (progressbars, 2))
-
-
-
-
-
-for i in range(101):
-        time.sleep(0.1)
-        values = [i, i, 0]
-        progressbars.update_all(values)
-        if i>=50:
-            progressbars.reset_bar(1)
-progressbars.finish_all()
-
-"""
