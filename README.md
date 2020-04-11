@@ -1,14 +1,14 @@
-# Hprogressbars
+# Htpbs
 
-Hprogressbars is a Python library that creates horizontal progress bars to keep 
-track of the progress of threaded jobs. Bars in hprogreessbars are completely customizable. 
+Htpbs is a Python library that creates horizontal progress bars to keep 
+track of the progress of threaded jobs. Bars in htpbs are completely customizable. 
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install hprogressbars.
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install htpbs.
 
 ```bash
-pip install hprogressbars
+pip install hprogressbars 
 ```
 
 ## Usage
@@ -18,10 +18,10 @@ The following are examples about how to use this library for threaded and non th
 ### Threaded horizontal bars
 
 ```python
-from hprogressbars import *
+from htpbs import *
 import time # required for demostration purposes only
 
-# Function used as example to demostrate the functionality of hprogressbars library
+
 # Note: users can create any configuration or function to be passed to the Work object below.
 def work(progressbars, bar_index, work_value, work_name):
     """
@@ -57,7 +57,7 @@ Work.start(work, (progressbars, 1, 0.01, "w2: "))
 ### Using the same thread
 
 ```python
-from hprogressbars import *
+from htpbs import *
 import time # required for demostration purposes only
 
 progressbars = ProgressBars(num_bars=5)
@@ -76,7 +76,7 @@ progressbars.finish_all() # avoid memory leaks.
 ### Remove bars when job is done and init the next bar
 ```python
 # clearing and initializing new progress bars:
-from hprogressbars import *
+from htpbs import *
 import time # required for demostration purposes only
 
 progressbars = ProgressBars(num_bars=3)

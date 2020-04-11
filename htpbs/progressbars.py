@@ -1,12 +1,12 @@
 """
-package:          hprogressbars
+package:          htpbs
 file:             progressbars.py
 Author:           Jose Ortiz <jortizcocs@gmail.com>
 Date Created:     04/09/2020
 Last Modified:    04/10/2020
 Licence:          MIT (see LICENSE.txt)
 
-This script belongs to the hprogressbars package and is internally imported
+This script belongs to the htpbs package and is internally imported
 by the file progressbars.py in the same package.
 
 This scripts imports the following libraries:
@@ -271,7 +271,7 @@ class ProgressBars:
 
     def finish_work(self):
         """
-        Finish all the work done by all the bars and 
+        Finish all the work done by all the bars and
         :return:
         """
         percentages = self._get_percentages()

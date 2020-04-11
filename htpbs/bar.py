@@ -1,12 +1,12 @@
 """
-package:          hprogressbars
+package:          htpbs
 file:             bar.py
 Author:           Jose Ortiz <jortizcocs@gmail.com>
 Date Created:     04/09/2020
 Last Modified:    04/10/2020
 Licence:          MIT (see LICENSE.txt)
 
-This script belongs to the hprogressbars package and is internally imported
+This script belongs to the htpbs package and is internally imported
 by the file progressbars.py in the same package. It also can be imported
 directly.
 
