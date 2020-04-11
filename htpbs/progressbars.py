@@ -21,7 +21,7 @@ bar
 import sys
 import threading
 
-from bar import *
+from .bar import *
 
 
 class ProgressBars:
