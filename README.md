@@ -8,7 +8,7 @@ track of the progress of threaded jobs. Bars in htpbs are completely customizabl
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install htpbs.
 
 ```bash
-pip install hprogressbars 
+pip install htpbs
 ```
 
 ## Usage
