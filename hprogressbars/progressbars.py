@@ -389,34 +389,15 @@ class Work:
             thread.join()
 
 
-# from hprogressbars import *
-import time  # used only as example
-
-progressbars = ProgressBars(num_bars=5)
-progressbars.set_last_bar_as_total_progress(prefix="Total Progress: ")
 
 
-# threaded bars using works. This functions represent works threaded
-def work(progressbars, bar_index, work_value, work_name):
-    progressbars.set_bar_prefix(bar_index=bar_index, prefix=work_name)
-    for i in range(101):
-        # your work here. we use the time.sleep() as example
-        # Real work could be downloading a file and show progress
-        time.sleep(work_value)
-        progressbars.update(bar_index=bar_index, value=i)
-    progressbars.finish() # finishes bar threaded
 
 
-Work.start(work, (progressbars, 0, 0.1, "work1: "))
-Work.start(work, (progressbars, 1, 0.01, "work2: "))
-Work.start(work, (progressbars, 2, 0.2, "work3: "))
-Work.start(work, (progressbars, 3, 0.05, "work4: "))
 
 
-# using the same thread
-for i in range(101):
-    # zero is assigned to start the value of the total progress
-    time.sleep(0.1)
-    values = [i, i+5, i + 10, i + 15, 0]
-    progressbars.update_all(values)  # update bars in the same thread
-progressbars.finish_all()  # avoid memory leaks.
+
+
+
+
+
+

@@ -19,7 +19,7 @@ The following are examples about how to use this library for threaded and non th
 
 ```python
 from hprogressbars import *
-import time # used only as example
+import time # required for demostration purposes only
 
 progressbars = ProgressBars(num_bars=5)
 progressbars.set_last_bar_as_total_progress(prefix="Total Progress: ")
@@ -46,7 +46,7 @@ Work.start(work, (progressbars, 3, 0.05, "work4: "))
 
 ```python
 from hprogressbars import *
-import time # used only as example
+import time # required for demostration purposes only
 
 progressbars = ProgressBars(num_bars=5)
 progressbars.set_last_bar_as_total_progress(prefix="Total Progress: ")
@@ -59,7 +59,33 @@ for i in range(101):
     progressbars.update_all(values) # update bars in the same thread
 progressbars.finish_all() # avoid memory leaks. 
 ```
+### Remove bars when job is done and init the next bar
+```python
+# clearing and initializing new progress bars:
+from hprogressbars import *
+import time # required for demostration purposes only
 
+progressbars = ProgressBars(num_bars=3)
+progressbars.set_last_bar_as_total_progress(prefix="Total Progress: ")
+# hide the bars that are not being used at the moment
+# multiple bars can be hidden at the same time
+progressbars.set_hidden_bars([1]) 
+
+# non threaded work 1 starts
+for i in range(101):
+    time.sleep(0.1)
+    progressbars.update(bar_index=0, value=i)
+progressbars.finish()
+progressbars.clear_bar(bar_index=0) # clears the bar that was completed from screen
+progressbars.reset_bar(index=1, prefix="new bar: ") # resets the new bar that will appear in screen 
+
+# non threaded work 2 starts
+for i in range(101):
+    time.sleep(0.1)
+    progressbars.update(bar_index=1, value=i)
+progressbars.finish()
+
+```
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
