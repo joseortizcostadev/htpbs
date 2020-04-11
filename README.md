@@ -30,7 +30,7 @@ def work(progressbars, bar_index, work_value, work_name):
     :param bar_index: a integer representing the index of the bae
     :param work_value: a value for time.sleep() to simulate different progress bars rates
     :param work_name: the name of the work
-    :return:
+    :return: VOID
     """
     progressbars.set_bar_prefix(bar_index=bar_index, prefix=work_name)
     for i in range(101):
