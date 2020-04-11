@@ -21,11 +21,17 @@ The following are examples about how to use this library for threaded and non th
 from hprogressbars import *
 import time # required for demostration purposes only
 
-progressbars = ProgressBars(num_bars=5)
-progressbars.set_last_bar_as_total_progress(prefix="Total Progress: ")
-
 # threaded bars using works. This functions represent works threaded
+# Note: users can create any configuration or function to be passed to the Work object below.
 def work(progressbars, bar_index, work_value, work_name):
+    """
+
+    :param progressbars: the progressbar obkect
+    :param bar_index: a integer representing the index of the bae
+    :param work_value: a value for time.sleep() to simulate different progress bars rates
+    :param work_name: the name of the work
+    :return:
+    """
     progressbars.set_bar_prefix(bar_index=bar_index, prefix=work_name)
     for i in range(101):
              # your work here. we use the time.sleep() as example
@@ -34,14 +40,17 @@ def work(progressbars, bar_index, work_value, work_name):
              progressbars.update(bar_index=bar_index, value=i)
     progressbars.finish()
 
+# start with 3 bars
+progressbars = ProgressBars(num_bars=3)
+# set bar #3 to be the total progress
+progressbars.set_last_bar_as_total_progress(prefix="Total Progress: ")
+
 # start all the threaded works
 Work.start(work, (progressbars, 0, 0.1, "work1: "))
 Work.start(work, (progressbars, 1, 0.01, "work2: "))
-Work.start(work, (progressbars, 2, 0.2, "work3: "))
-Work.start(work, (progressbars, 3, 0.05, "work4: "))    
 
-# output when progress bars are done 
-# work1:  |██████████| 100% completed      work2:  |██████████| 100% completed      work3:  |██████████| 100% completed      work4:  |██████████| 100% completed      Total Progress:  |██████████| 100% completed  
+# output after works finished 
+# work1:  |██████████| 100% completed    work2:  |██████████| 100% completed    Total Progress:  |██████████| 100% completed  
     
 ```
 
