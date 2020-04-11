@@ -1,7 +1,7 @@
 # Hprogressbars
 
 Hprogressbars is a Python library that creates horizontal progress bars to keep 
-track of the progress of threaded jobs. 
+track of the progress of threaded jobs. Bars in hprogreessbars are completely customizable. 
 
 ## Installation
 
@@ -96,4 +96,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](https://github.com/joseortizcostadev/hprogressbars/blob/master/LICENSE.txt)
