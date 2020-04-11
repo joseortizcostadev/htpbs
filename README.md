@@ -65,9 +65,8 @@ progressbars.set_last_bar_as_total_progress(prefix="Total Progress: ")
 
 # using the same thread 
 for i in range(101):
-    # zero is assigned to start the value of the total progress
     time.sleep(0.1)
-    values = [i, i+5, i+10, i+15, 0] 
+    values = [i, i+5, i+10, i+15, 0] # zero for init total progress 
     progressbars.update_all(values) # update bars in the same thread
 progressbars.finish_all() # avoid memory leaks. 
 ```
