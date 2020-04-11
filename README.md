@@ -8,7 +8,7 @@ track of the progress of threaded jobs.
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install hprogressbars.
 
 ```bash
-pip install hprogressbar
+pip install hprogressbars
 ```
 
 ## Usage
