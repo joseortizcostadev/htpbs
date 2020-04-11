@@ -38,7 +38,10 @@ def work(progressbars, bar_index, work_value, work_name):
 Work.start(work, (progressbars, 0, 0.1, "work1: "))
 Work.start(work, (progressbars, 1, 0.01, "work2: "))
 Work.start(work, (progressbars, 2, 0.2, "work3: "))
-Work.start(work, (progressbars, 3, 0.05, "work4: "))      
+Work.start(work, (progressbars, 3, 0.05, "work4: "))    
+
+# output when progress bars are done 
+# work1:  |██████████| 100% completed      work2:  |██████████| 100% completed      work3:  |██████████| 100% completed      work4:  |██████████| 100% completed      Total Progress:  |██████████| 100% completed  
     
 ```
 
